@@ -304,7 +304,7 @@
       <div id=zipHider style=display:none><input name=b type=radio id=rZip checked=true />ZIP archive from server
     </label><select id=selectZip style=display:none></select><br></div>
 
-    Command-line arguments: <input name=d type=text id=iArgs value="-dev 1;-game valve;-width 1280;-height 720;-freq 999;+_sethdmodels 0;+fps_max 999999" /><br><br>
+    Command-line arguments: <input name=d type=text id=iArgs value="-dev 1 -game valve -width 1280 -height 720 -freq 999 +_sethdmodels 0 +fps_max 999999" /><br><br>
 
     <input type=button onclick="startXash();return false;" value="Launch Half-Life!" />
 
@@ -526,7 +526,7 @@
       showElement('optionsTitle', false);
       showElement('fSettings', false);
       setupFS();
-      Module.arguments = document.getElementById('iArgs').value.split(';');
+      Module.arguments = document.getElementById('iArgs').value.split(' ');
       Module.run = run = savedRun;
       if (radioChecked('Zip')) {
         const zipper = document.getElementById('selectZip');
